@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     var randomDiceIndex1: Int = 0
     var randomDiceIndex2: Int = 0
+    
+    let diceArray = ["dice1", "dice2", "dice3", "dice4", "dice5", "dice6"]
 
     @IBOutlet weak var diceImageView1: UIImageView!
     @IBOutlet weak var diceImageView2: UIImageView!
@@ -20,41 +22,9 @@ class ViewController: UIViewController {
         randomDiceIndex1 = Int(arc4random_uniform(6))
         randomDiceIndex2 = Int(arc4random_uniform(6))
         
-        switch randomDiceIndex1 {
-        case 0:
-            diceImageView1.image = UIImage(named: "dice1.png")
-        case 1:
-            diceImageView1.image = UIImage(named: "dice2.png")
-        case 2:
-            diceImageView1.image = UIImage(named: "dice3.png")
-        case 3:
-            diceImageView1.image = UIImage(named: "dice4.png")
-        case 4:
-            diceImageView1.image = UIImage(named: "dice5.png")
-        case 5:
-            diceImageView1.image = UIImage(named: "dice6.png")
-        default:
-            diceImageView1.image = UIImage(named: "dice1.png")
-            
-        }
+        diceImageView1.image = UIImage(named: diceArray[randomDiceIndex1])
+        diceImageView2.image = UIImage(named: diceArray[randomDiceIndex2])
         
-        switch randomDiceIndex2 {
-        case 0:
-            diceImageView2.image = UIImage(named: "dice1.png")
-        case 1:
-            diceImageView2.image = UIImage(named: "dice2.png")
-        case 2:
-            diceImageView2.image = UIImage(named: "dice3.png")
-        case 3:
-            diceImageView2.image = UIImage(named: "dice4.png")
-        case 4:
-            diceImageView2.image = UIImage(named: "dice5.png")
-        case 5:
-            diceImageView2.image = UIImage(named: "dice6.png")
-        default:
-            diceImageView2.image = UIImage(named: "dice1.png")
-            
-        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
